@@ -63,7 +63,7 @@ int main (){
     scanf("%f", &area1);
     
     printf("Digite a quantidade de pontos Turísticos em %s \n", cidade1);
-    scanf("%lu", &pontosturisticos1);
+    scanf("%d", &pontosturisticos1);
 
     // Depois de ler todos os dados da carta 1
         densidade1 = (float)populacao1 / area1; 
@@ -132,29 +132,22 @@ int main (){
     printf("Densidade Populacional: %.2f habitantes por km² \n", densidade2);
     printf("PIB per Capita: %.2f reais \n", pibpercapita2);
 
- // Variaveis de Comparação entre as Cartas
-    
-    int comparacaopopulacao, comparacaopib, comparacaoarea, comparacaopontos, comparacaopibpercapita, comparacaosuperpoder, comparacaodensidade;
+// Vamos iniciar a disputa das cartas usando a lógica de decisão 
 
-    comparacaopopulacao = (populacao1 > populacao2);
-    comparacaopib = (pib1 > pib2);
-    comparacaoarea = (area1 > area2);
-    comparacaopontos = (pontosturisticos1 > pontosturisticos2);
-    comparacaopibpercapita = (pibpercapita1 > pibpercapita2);
-    comparacaosuperpoder = (superpoder1 > superpoder2);
-    comparacaodensidade = (densidade1 < densidade2); // Para densidade populacional, a carta com menor valor é considerada melhor
+    printf("Vamos iniciar a disputa ! \n");
+    printf("Comparação de Cartas - População \n");
 
+//Exibição das Cartas e Valores que iremos comparar pensando no atributo população
 
-//Exibição de Resultados da Comparação entre as Cartas
+    printf("Carta 1 - %s (%s): %lu \n", cidade1, cod1, populacao1);
+    printf("Carta 2 - %s (%s): %lu \n", cidade2, cod2, populacao2);
 
-printf("Vamos comparar as cartas ! \n");
-printf("População: Carta 1 venceu (%d)\n", comparacaopopulacao);
-printf("Area: Carta 1 venceu (%d)\n", comparacaoarea);
-printf("PIB: Carta 1 venceu (%d)\n", comparacaopib);
-printf("Pontos Turísticos: Carta 1 venceu (%d)\n", comparacaopontos);
-printf("Densidade Populacional: Carta 2 venceu (%d)\n", comparacaodensidade);
-printf("PIB per Capita: Carta 1 venceu (%d)\n", comparacaopibpercapita);
-printf("Super Poder: Carta 1 venceu (%d)\n", comparacaosuperpoder);
+//Pensamento lógico para definir a carta Vencedora
+
+    if (populacao1 > populacao2){
+        printf("Resultado: Carta 1 - %s venceu | \n",cidade1);
+     }else
+        printf("Resultado: Carta 2 - %s venceu | \n",cidade2);
 
 return 0;
 
